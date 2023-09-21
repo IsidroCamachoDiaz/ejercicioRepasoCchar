@@ -12,13 +12,13 @@ namespace ejercicioRepaso.Modelo
         string nombre;
         string apellidos;
         string dni;
-        string fechaNacimiento;
+        Fecha fechaNacimiento;
         string titulacionMasAlta;
         int numSeguridadSocial;
         int numCuenta;
         int numeroEmpleado;
         //Constructores
-        public Empleado(string nombre, string apellidos, string dni, string fechaNacimiento, string titulacionMasAlta, int numSeguridadSocial, int numCuenta,int numeroEmpleado)
+        public Empleado(string nombre, string apellidos, string dni, Fecha fechaNacimiento, string titulacionMasAlta, int numSeguridadSocial, int numCuenta,int numeroEmpleado)
         {
             this.nombre = nombre;
             this.apellidos = apellidos;
@@ -33,7 +33,7 @@ namespace ejercicioRepaso.Modelo
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
         public string Dni { get => dni;}
-        public string FechaNacimiento { get => fechaNacimiento; }
+        public Fecha FechaNacimiento { get => fechaNacimiento; }
         public string TitulacionMasAlta { get => titulacionMasAlta; set => titulacionMasAlta = value; }
         private int NumSeguridadSocial { get => numSeguridadSocial; }
         private int NumCuenta { get => numCuenta;}
@@ -42,7 +42,7 @@ namespace ejercicioRepaso.Modelo
         //Los valores para pasar al archivo
         public string TextoArchivo { get
             {
-                return Nombre+";"+Apellidos+";"+Dni+";"+FechaNacimiento+";"+TitulacionMasAlta;
+                return Nombre+";"+Apellidos+";"+Dni+";"+FechaNacimiento.fechaTexto+";"+TitulacionMasAlta;
             } 
         }
 

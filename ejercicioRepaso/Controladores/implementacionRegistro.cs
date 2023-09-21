@@ -21,8 +21,21 @@ namespace ejercicioRepaso.Controladores
                 string apellidos = Console.ReadLine();
                 Console.WriteLine("Introduzca su DNI");
                 string dni = Console.ReadLine();
-                Console.WriteLine("Introduzca su fecha de Nacimiento");
-                string fecha = Console.ReadLine();
+                bool ok = true;
+                //Creamos los valores del tipo fecha
+                int dia, mes, anyo;
+                do {
+                    dia = Util.CapturaEntero("Introduzca el dia de su fecha de Nacimiento", 1, 31);
+                    mes = Util.CapturaEntero("Introduzca el mes de su fecha de Nacimiento", 1, 12);
+                    anyo = Util.CapturaEntero("Introduzca el año de su fecha de Nacimiento", 1, DateTime.Now.Year);
+                    //Se comprueba la fecha que ha puesto y si coincide con el calendario
+                    if (dia > Fecha.diasMaximosMes[mes]||(!DateTime.IsLeapYear(anyo)&&dia==29&&mes==2)) {
+                        ok=false;
+                    }
+                    if(!ok)
+                        Console.WriteLine("Puso Mal la fecha");
+                } while (!ok);
+                Fecha fe = new Fecha(dia,mes,anyo);
                 Console.WriteLine("Introduzca su Titulacion mas alta");
                 string titulacion = Console.ReadLine();
                 int numSS = Util.CapturaEntero("Introduzca su numero de la seguridad social", 0, 99999999);
@@ -32,7 +45,7 @@ namespace ejercicioRepaso.Controladores
                 Console.WriteLine("Su numero de Empleado es: "+numeroRegistro);
                 Console.ReadKey();
                 //Se crea el objeto dentro de la lista
-                empleados.Add(new Empleado(nombre, apellidos, dni, fecha, titulacion, numSS, numCuenta, numeroRegistro));
+                empleados.Add(new Empleado(nombre, apellidos, dni, fe, titulacion, numSS, numCuenta, numeroRegistro));
                 //Excepciones
             }catch (Exception ex)
             {

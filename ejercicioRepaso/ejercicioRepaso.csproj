@@ -46,6 +46,7 @@
     <Compile Include="Controladores\implementacionRegistro.cs" />
     <Compile Include="Controladores\interfazRegistro.cs" />
     <Compile Include="Modelo\Empleado.cs" />
+    <Compile Include="Modelo\Fecha.cs" />
     <Compile Include="Modelo\implementacionEscritura.cs" />
     <Compile Include="Modelo\interfazEscritura.cs" />
     <Compile Include="Modelo\Util.cs" />
