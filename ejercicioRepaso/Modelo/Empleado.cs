@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ejercicioRepaso.Modelo
 {
+    /// <summary>
+    /// El tipo empleado donde se guardan sus datos 
+    /// </summary>
     public class Empleado
     {
        //Atributos

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ejercicioRepaso.Modelo
 {
-    //El tipo fecha contiene los enteros de la fecha
+    /// <summary>
+    /// El tipo fecha contiene los enteros de la fecha
+    /// </summary>
     public class Fecha
     {
         //Atributos

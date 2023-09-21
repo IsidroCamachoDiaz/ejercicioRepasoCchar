@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 
 namespace ejercicioRepaso.Modelo
 {
-    //Esta clase la uso de herramientas duarnte varios procesos y la uso como static
+    /// <summary>
+    /// Esta clase la uso de herramientas duarnte varios procesos y la uso como static
+    /// </summary>
     public static class Util
     {
-        //Recibe el texto del enunciado y los valores maximos y minimos y da un numero entre los valores
+        /*Recibe el texto del enunciado y los valores maximos y minimos 
+         * y da un numero entre los valores*/
         public static int CapturaEntero(string texto,int min ,int max)
         {
             bool ok;
